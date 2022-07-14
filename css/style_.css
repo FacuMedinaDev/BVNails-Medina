@@ -19,7 +19,7 @@ body{
 
 /* Especifico para el body del home */
 .home{
-    background-image: url(/images/uñasBeti4.jpeg);
+    background-image: url(../images/uñasBeti4.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

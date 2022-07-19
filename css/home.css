@@ -1,4 +1,11 @@
 
+@import url(./animaciones.css);
+
+/* INICIO DE LA PAGINA */
+.inicioWeb{
+    /* animation-name: inicioWeb;
+    animation-duration: 10s; */
+}
 /* CONTENIDO PRINCIPAL DE LA PAGINA */
 .home__contenido{
     grid-row: 2/3;
@@ -8,8 +15,14 @@
 
 .home__contenido__logo{
     font-family: 'Titan One', cursive;
+    animation-name: mostrarLogo;
+    animation-duration: 2s;
 }
 
+.home__contenido__eslogan{
+    font-family: 'Titan One', cursive;
+    text-align: center;
+}
 /* CAMBIOS DE BACKGROUND SEGUN ANCHO DE PAGINA */
 
 /* DOS IMAGENES DE FONDO */
@@ -161,6 +174,7 @@
 
     .home__contenido__logo{
         font-family: 'Titan One', cursive;
+        
     }
 
     /* FOOTER */

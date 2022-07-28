@@ -66,6 +66,7 @@ header{
     height: 100vh;
     position: absolute;
     top: 0;
+    left: 0;
     justify-content: center;
     align-items: center;
     background-color: rgba(128, 128, 128, .8);
@@ -194,16 +195,46 @@ footer img{
             text-align: justify;
         } 
 /* ESPECIFICO: Galeria */
+
+        .historias{
+            height: 110px;
+            text-align: center;
+        }
+
+        .historias__btn{
+            height: 70px; 
+            width: 70px;
+            border-radius: 50%;
+            background-image: url(../images/instagram.png);   
+        }
+        .modal-dialog{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+        }
+        .modal-content{
+            height: 100vh;
+            justify-content: center;
+            background-color: transparent;
+            border: none;
+        }
+
+        .modal-content button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            font-size: 30px;
+        }
         .galeria{
             display: grid;
             margin: 0 auto;
             height: auto;
             grid-template-columns: repeat(2, 150px);
-            grid-template-rows: repeat(5, 150px);
+            grid-template-rows: 60px, repeat(2, 150px);
             gap: 10px;
             justify-content: center;
         }
-
         .galeria__imagen{
             border: black solid 1px;
             border-radius: 20px;
@@ -214,8 +245,8 @@ footer img{
         }
 
         .galeria__instagram{
-            width: 150px;
-            height: 310px;
+            width: 250px;
+            height: 450px;
             grid-row: span 2;
             border-radius: 20px;
             object-fit: cover;
@@ -264,7 +295,7 @@ footer img{
         margin: 0 auto;
         height: auto;
         grid-template-columns: repeat(2, 250px);
-        grid-template-rows: repeat(5, 250px);
+        grid-template-rows: 250px;
         gap: 10px;
         justify-content: center;
     }
@@ -281,7 +312,6 @@ footer img{
     .galeria__instagram{
         width: 250px;
         height: 510px;
-        grid-row: span 2;
         border-radius: 20px;
         object-fit: cover;
         object-position: center center;
@@ -353,7 +383,7 @@ footer img{
         margin: 0 auto;
         height: auto;
         grid-template-columns: repeat(3, 250px);
-        grid-template-rows: repeat(4, 250px);
+        grid-template-rows: 250px;
         gap: 10px;
         justify-content: center;
     }

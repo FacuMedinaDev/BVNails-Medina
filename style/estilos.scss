@@ -1,0 +1,598 @@
+
+@import "_animaciones"; 
+
+// VARIABLES
+$heightHeader: 50px; 
+$heightFooter: 100px; 
+$fontPrincipal: 'Roboto', sans-serif;
+$fontLogo: 'Titan One', cursive;
+$backgroundModal: rgba(128, 128, 128, .8);
+
+/*ESQUELETO PRINCIPAL DE TODAS LAS PAGINAS: MOBILE */
+body{
+
+    /*ESTRUCTURA PRINCIPAL*/
+    background-image: url(../images/My\ project.png);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: $heightHeader auto $heightFooter;
+    grid-template-columns: 100%;
+    font-family: 'Roboto', sans-serif;
+
+    /*HEADER*/
+    header{
+        grid-row: 1/2;
+        width: 100%;
+        text-align: right;
+        
+        #menu{
+            display: none;
+        }
+
+        .menuOpen{
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .menuClose{
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 10px;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .menu{
+            display: none;    
+        }
+
+        #menu:checked ~ .menu{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: $backgroundModal;
+            text-align: center;
+
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style: none;
+                    margin-bottom: 5px;
+                    a{
+                        text-decoration: none;
+                        font-family: 'Titan One', cursive;
+                        color: white;
+                    }
+                }
+            }
+        }
+}
+
+    /*CONTENIDO*/
+    .contenido{
+        grid-row: 2/3;
+        width: 100%;
+
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 15px;
+            border-top: black solid 3px;
+            border-bottom: black solid 3px;
+            animation-name: mostrarTitulo;
+            animation-duration: 2s;
+        }
+    }
+
+    /* FOOTER */
+    footer{
+        grid-row: 3/4;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+
+        img{
+            margin-top: 10px;
+            width: 20px;
+        }
+    }
+}
+
+/*Especifico HOME*/
+
+.body__home{
+    background-image: url(../images/uñasBeti4.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .contenido{
+        height: calc(100vh - $heightHeader - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .logo{
+            text-align: center;
+            font-family: 'Titan One', cursive;
+            animation-name: mostrarLogo;
+            animation-duration: 2s;
+        }
+        
+        .eslogan{
+            font-family: 'Titan One', cursive;
+            text-align: center;
+        }
+    }
+}
+
+/*Especifico SERVICIOS*/
+
+.body__servicios{
+
+    .contenido{
+
+        .servicios{
+            grid-row: 2/3;
+            display: flex;
+            flex-direction: column;
+            .servicio{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .titulo{
+                    text-align: center;
+                }
+                .imagen{
+                    width: 100%; 
+                    max-width: 400px;
+                    height: 250px;
+                    object-fit: cover;
+                }
+                .texto{
+                    width: 100%;
+                    max-width: 350px;
+                    text-align: justify;
+                }
+            }
+
+        }
+    }
+}
+
+/*Especifico GALERIA*/
+
+.body__galeria{
+    .contenido{
+        //Estilos para historias de Instagram.
+        .historias{
+            height: 110px;
+            text-align: center;
+
+            .boton{
+                height: 70px; 
+                width: 70px;
+                border-radius: 50%;
+                background-image: url(../images/instagram.png);   
+            }
+            .modal-dialog{
+                height: 100vh;
+                width: 100%;
+                display: flex;
+            }
+            .modal-content{
+                height: 100vh;
+                justify-content: center;
+                background-color: transparent;
+                border: none;
+        
+                .button{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 20px;
+                    font-size: 30px;
+                }
+            }
+            .instagram{
+                width: 250px;
+                height: 450px;
+                grid-row: span 2;
+                border-radius: 20px;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+
+        .galeria{
+            display: grid;
+            margin: 0 auto;
+            height: auto;
+            grid-template-rows: 150px;
+            grid-template-columns: repeat(2, 150px);
+            gap: 10px;
+            justify-content: center;
+
+            .imagen{
+                border: black solid 1px;
+                border-radius: 20px;
+                height: 150px;
+                width: 150px;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+    }
+}
+
+/*Especifico SOBRE MI*/
+
+.body__sobreMi{
+    .contenido{
+        .sobreMi{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .insta{
+                width: 250px;
+                height: 450px;
+                border-radius: 20px;
+            }
+    
+            .texto{
+                margin-top: 10px;
+                text-align: justify;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/*Especifico CONTACTO*/
+
+.body__contacto{
+
+}
+
+@media(min-width: 600px){
+
+    /*QUITAR MENU DESPLEGABLE EN EL RESTO DE LAS PANTALLAS*/
+    body{
+        header{
+            grid-row: 1/2;
+            width: 100%;
+
+            .menuOpen , .menuClose{
+                display: none;
+            }
+
+            .menu{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                margin-top: 10px;
+                background-color: rgba(128, 128, 128, .5);
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                li{
+                    list-style: none;
+                    a{
+                        text-decoration: none;
+                        font-family: 'Titan One', cursive;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }    
+
+    /*BACKGRAUND DE DOS IMAGENES EN EL HOME*/
+    .body__home{
+        background-image: none;
+            display: grid;
+            grid-template-rows: $heightHeader 1fr $heightFooter;
+            grid-template-columns: repeat(4, 1fr);
+    
+            .background1{
+                grid-row: 1/4;
+                grid-column: 1/3;
+                background-image: url(../images/uñasBeti1.jpeg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+    
+            .background2{
+                grid-row: 1/4;
+                grid-column: 3/5;
+                background-image: url(../images/uñasBeti4.jpeg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+    
+            header{
+                grid-row: 1/2;
+                grid-column: 1/5;
+                width: 100%;
+    
+                .menuOpen , .menuClose{
+                    display: none;
+                }
+    
+                .menu{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-content: center;
+                    margin-top: 10px;
+                    background-color: rgba(128, 128, 128, .5);
+                }
+    
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+    
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            font-family: 'Titan One', cursive;
+                            color: white;
+                        }
+                    }
+                }
+            }
+    
+            .contenido{
+                grid-row: 2/3;
+                grid-column: 1/5;
+                justify-self: center;
+                align-self: center;
+            }
+            footer{
+                grid-row: 3/4;
+                grid-column: 1/5;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                align-items: center;
+            }
+    }
+
+    .body__galeria{
+        .contenido{
+            .galeria{
+                display: grid;
+                margin: 0 auto;
+                height: auto;
+                grid-template-rows: 150px;
+                grid-template-columns: repeat(3, 150px);
+                gap: 10px;
+                justify-content: center;
+    
+                .imagen{
+                    border: black solid 1px;
+                    border-radius: 20px;
+                    height: 150px;
+                    width: 150px;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+        }
+    }
+
+    .body__sobreMi{
+        .contenido{
+            .sobreMi{
+                margin: 30px;
+                display: flex;
+                flex-direction: row;
+                gap: 20px; 
+            }
+        }
+    }
+}
+
+@media(min-width: 800px){
+
+    /*BACKGRAUND DE TRES IMAGENES EN EL HOME*/
+    .body__home{
+        background-image: none;
+        display: grid;
+        grid-template-rows: $heightHeader 1fr $heightFooter;
+        grid-template-columns: repeat(6, 1fr);
+
+        .background1{
+            grid-row: 1/4;
+            grid-column: 1/3;
+            background-image: url(../images/uñasBeti1.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background2{
+            grid-row: 1/4;
+            grid-column: 3/5;
+            background-image: url(../images/uñasBeti4.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background3{
+            grid-row: 1/4;
+            grid-column: 5/7;
+            background-image: url(../images/uñasBeti6.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header{
+            grid-row: 1/2;
+            grid-column: 1/7;
+            width: 100%;
+
+            .menuOpen , .menuClose{
+                display: none;
+            }
+
+            .menu{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                margin-top: 10px;
+                background-color: rgba(128, 128, 128, .5);
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                li{
+                    list-style: none;
+                    a{
+                        text-decoration: none;
+                        font-family: 'Titan One', cursive;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .contenido{
+            grid-row: 2/3;
+            grid-column: 2/6;
+            justify-self: center;
+            align-self: center;
+        }
+        footer{
+            grid-row: 3/4;
+            grid-column: 1/7;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+    }
+
+    .body__servicios{
+        .contenido{
+            .servicios{
+                .servicio{
+                    margin-left: 10vw;
+                    margin-right: 10vw;
+                    margin-bottom: 30px;
+                    display: grid;
+                    grid-template-rows: repeat(20px, 1fr);
+                    grid-template-columns: 300vw, 1fr;
+                    align-items: start;
+    
+                    .titulo{
+                        align-self: center;
+                        grid-row: 1/2;
+                        grid-column: 1/3;
+                        text-align: center;
+                    }
+                    .imagen{
+                        width: 300px;
+                        grid-row: 2/3;
+                        grid-column: 1/2;
+                        align-self: center;
+                        justify-self: center;
+                        border-radius: 30px;
+                    }
+                    .texto{
+                        max-width: 500px;
+                        width: 100%;
+                        grid-row: 2/3;
+                        grid-column: 2/3;
+                        margin-left: 15px;
+                        justify-self: center;
+                    }
+                }            
+            }
+        }
+        
+    }
+
+    .body__galeria{
+        .contenido{
+            .galeria{
+                grid-template-rows: 250px;
+                grid-template-columns: repeat(3, 250px);
+
+                .imagen{
+                    height: 250px;
+                    width: 250px;
+                }
+            }
+        }
+    }
+
+    .body__sobreMi{
+        .contenido{
+            .sobreMi{
+                margin-left: 10vw;
+                margin-right: 10vw;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .body__servicios{
+        .contenido{
+            .servicios{
+                .servicio{
+                    margin-left: 20vw;
+                    margin-right: 20vw;
+                }
+            }
+        }
+    }
+
+    .body__sobreMi{
+        .contenido{
+            .sobreMi{
+                margin-left: 20vw;
+                margin-right: 20vw;
+            }
+        }
+    }
+}

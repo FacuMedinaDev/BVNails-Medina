@@ -137,11 +137,13 @@ body{
             font-size: 50px;
             animation-name: mostrarLogo;
             animation-duration: 2s;
+            color: black;
         }
         
         .eslogan{
             font-family: $fontLogo;
             text-align: center;
+            color: black;
         }
     }
 }
@@ -300,6 +302,10 @@ body{
                     border-radius: 6px;
                     text-align: center;
                     height: 40px; 
+                    a{
+                        text-decoration: none; 
+                        color: black
+                    }
                 }
 
                 @each $red, $color in $redes {
@@ -316,7 +322,7 @@ body{
 
             #turnero:checked ~ .turnero{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 justify-content: center;
                 background-color: $backgroundModal;
@@ -326,8 +332,32 @@ body{
                 width: 100%;
                 height: 100vh;
                 
+                form{
+                    label, input, select{
+                        display: block;
+                        text-align: center;
+                        width: 300px;
+                        margin-bottom: 5px;
+                        height: 30px;
+                        border-radius: 15px;
+                        font-size: 20px;
+                    }
+    
+                    textarea{
+                        width: 300px;
+                        height: 150px;
+                        border-radius: 15px;
+                        box-sizing:inherit;
+                        padding: 15px;
+                        font-size: 20px;
+                    }
+
+                }
+
                 .turnosClose{
                     position: absolute;
+                    text-align: right;
+                    width: 20px;
                     top: 0;
                     right: 0;
                     margin: 15px;
@@ -335,6 +365,7 @@ body{
                 }
             }
         }
+
     }
 }
 
@@ -524,6 +555,40 @@ body{
                     width: 100%;
                     height: 100vh;
                     
+                    form{
+                        display: flex;
+                        flex-direction: row;
+
+                        label, input, select{
+                            display: block;
+                            text-align: center;
+                            width: 250px;
+                            margin-bottom: 5px;
+                            margin-left: 10px;
+                            height: 30px;
+                            border-radius: 15px;
+                            font-size: 15px;
+                        }
+        
+                        textarea{
+                            width: 250px;
+                            height: 150px;
+                            margin-left: 10px;
+                            border-radius: 15px;
+                            box-sizing:inherit;
+                            padding: 15px;
+                            font-size: 15px;
+                        }
+                        .botones{
+                            position: absolute;
+                            bottom: 0;
+                            margin-bottom: 50px;
+                            input{
+                                display: inline;
+                            }
+                        }
+                    }
+
                     .turnosClose{
                         position: absolute;
                         top: 0;
@@ -744,4 +809,57 @@ body{
             }
         }
     }
+
+    .body__contacto{
+        .contenido{
+            .contactos{
+    
+                #turnero:checked ~ .turnero{
+
+                    form{
+                        display: flex;
+                        flex-direction: row;
+
+                        label, input, select{
+                            display: block;
+                            text-align: center;
+                            width: 350px;
+                            margin-bottom: 5px;
+                            margin-left: 10px;
+                            height: 30px;
+                            border-radius: 15px;
+                            font-size: 15px;
+                        }
+        
+                        textarea{
+                            width: 350px;
+                            height: 150px;
+                            margin-left: 10px;
+                            border-radius: 15px;
+                            box-sizing:inherit;
+                            padding: 15px;
+                            font-size: 15px;
+                        }
+                        .botones{
+                            position: absolute;
+                            bottom: 0;
+                            margin-bottom: 150px;
+                            input{
+                                display: inline;
+                            }
+                        }
+                    }
+
+                    .turnosClose{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 15px;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    
 }

@@ -47,13 +47,53 @@
         <div class="contactos">
             <input type="checkbox" id="turnero"> 
             <div class="botonera">
-                <button type="button" class="boton btn--whatsapp">WHATSAPP</button>
-                <button type="button" class="boton btn--instagram">INSTAGRAM</button>
+                <button type="button" class="boton btn--whatsapp"><a href="https://www.whatsapp.com" target="_blank">WHATSAPP</a></button>
+                <button for="turnero" type="button" class="boton btn--instagram"><a href="https://www.instagram.com/nailsbv_/" target="_blank">INSTAGRAM</a></button>
                 <label class="turnosOpen boton btn--turnos" for="turnero">TURNO ONLINE</label>
+
             </div>
             <div class="turnero">
                 <label class="turnosClose btn-close" for="turnero"></label>
-                <div>FORMULARIO DE CONTACTO</div>
+                <form name="contact" method="post" data-netlify="true">
+                    <div class="datosP">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido">
+                        <label for="servicio">Servicios</label>
+                        <select name="servicio">
+                            <option value="EsmaltadoSemi">Esmaltado Semipermanente</option>
+                            <option value="EsmaltadoTradi">Esmaltado Tradicional</option>
+                            <option value="Capping">Capping</option>
+                            <option value="Extensiones">Extensiones en Soft Gel</option>
+                            <option value="Press">Press On</option>
+                        </select>
+                    </div>
+                    <div class="datosT">
+                        <label for="dias">Dia del turno</label>
+                        <select name="dia">
+                            <option value="lunes">Lunes</option>
+                            <option value="martes">Martes</option>
+                            <option value="miercoles">Miercoles</option>
+                            <option value="jueves">Jueves</option>
+                            <option value="viernes">Viernes</option>
+                        </select>
+                        <label for="horario">Horario</label>
+                        <select name="horario" id="horario">
+                            <option value="#">08:30 am</option>
+                            <option value="#">09:30 am</option>
+                            <option value="#">10:30 am</option>
+                            <option value="#">11:30 am</option>
+                            <option value="#">12:30 pm</option>
+                        </select>
+                        <label for="comentarios">Comentario</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="botones">
+                        <input class="" type="submit" name="enviar" value="Enviar">
+                        <input class="" type="reset" name="limpiarCampos" value="Cancelar">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -193,10 +193,12 @@ body footer img {
           animation-name: mostrarLogo;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
+  color: black;
 }
 .body__home .contenido .eslogan {
   font-family: "Titan One", cursive;
   text-align: center;
+  color: black;
 }
 
 /*Especifico SERVICIOS*/
@@ -327,6 +329,10 @@ body footer img {
   text-align: center;
   height: 40px;
 }
+.body__contacto .contenido .contactos .botonera .btn a, .body__contacto .contenido .contactos .botonera .btn--turnos a, .body__contacto .contenido .contactos .botonera .btn--instagram a, .body__contacto .contenido .contactos .botonera .btn--whatsapp a {
+  text-decoration: none;
+  color: black;
+}
 .body__contacto .contenido .contactos .botonera .btn--whatsapp {
   border: solid 1px black;
   background-color: #25d366;
@@ -344,7 +350,7 @@ body footer img {
 }
 .body__contacto .contenido .contactos #turnero:checked ~ .turnero {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: rgba(128, 128, 128, 0.8);
@@ -354,8 +360,27 @@ body footer img {
   width: 100%;
   height: 100vh;
 }
+.body__contacto .contenido .contactos #turnero:checked ~ .turnero form label, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form input, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form select {
+  display: block;
+  text-align: center;
+  width: 300px;
+  margin-bottom: 5px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+.body__contacto .contenido .contactos #turnero:checked ~ .turnero form textarea {
+  width: 300px;
+  height: 150px;
+  border-radius: 15px;
+  box-sizing: inherit;
+  padding: 15px;
+  font-size: 20px;
+}
 .body__contacto .contenido .contactos #turnero:checked ~ .turnero .turnosClose {
   position: absolute;
+  text-align: right;
+  width: 20px;
   top: 0;
   right: 0;
   margin: 15px;
@@ -519,6 +544,37 @@ body footer img {
     left: 0;
     width: 100%;
     height: 100vh;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form {
+    display: flex;
+    flex-direction: row;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form label, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form input, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form select {
+    display: block;
+    text-align: center;
+    width: 250px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 15px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form textarea {
+    width: 250px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 15px;
+    box-sizing: inherit;
+    padding: 15px;
+    font-size: 15px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form .botones {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form .botones input {
+    display: inline;
   }
   .body__contacto .contenido .contactos #turnero:checked ~ .turnero .turnosClose {
     position: absolute;
@@ -710,5 +766,43 @@ body footer img {
   .body__sobreMi .contenido .sobreMi {
     margin-left: 20vw;
     margin-right: 20vw;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form {
+    display: flex;
+    flex-direction: row;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form label, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form input, .body__contacto .contenido .contactos #turnero:checked ~ .turnero form select {
+    display: block;
+    text-align: center;
+    width: 350px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 15px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form textarea {
+    width: 350px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 15px;
+    box-sizing: inherit;
+    padding: 15px;
+    font-size: 15px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form .botones {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 150px;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero form .botones input {
+    display: inline;
+  }
+  .body__contacto .contenido .contactos #turnero:checked ~ .turnero .turnosClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    font-size: 25px;
   }
 }/*# sourceMappingURL=estilos.css.map */

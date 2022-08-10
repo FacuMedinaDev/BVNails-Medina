@@ -369,6 +369,16 @@ body{
     }
 }
 
+.body__envioFormulario{
+    .contenido{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 30px;
+        font-family: $fontLogo;
+    }
+}
 @media(min-width: 600px){
 
     /*QUITAR MENU DESPLEGABLE EN EL RESTO DE LAS PANTALLAS*/

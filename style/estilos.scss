@@ -156,6 +156,7 @@ body{
             grid-row: 2/3;
             display: flex;
             flex-direction: column;
+
             .servicio{
                 display: flex;
                 flex-direction: column;
@@ -176,7 +177,6 @@ body{
                     text-align: justify;
                 }
             }
-
         }
     }
 }
@@ -273,7 +273,69 @@ body{
 /*Especifico CONTACTO*/
 
 .body__contacto{
+    .contenido{
+        height: calc(100vh - $heightHeader - $heightFooter - 200px);
+        .contactos{
+            height: calc(100vh - $heightHeader - $heightFooter - 200px);
+            #turnero{
+                display: none;
+            }
+            .botonera{
+                height: calc(100vh - $heightHeader - $heightFooter - 200px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                margin-left: 10vw;
+                margin-right: 10vw;
 
+                $redes:(
+                    whatsapp:#25d366, 
+                    instagram: #833ab4,
+                    turnos: #1da1f2
+                );
+
+                .btn{
+                    border: none;
+                    border-radius: 6px;
+                    text-align: center;
+                    height: 40px; 
+                }
+
+                @each $red, $color in $redes {
+                    .btn--#{$red}{
+                        @extend .btn; 
+                        border: solid 1px black;
+                        background-color: $color;
+                    }
+                }
+            }
+            .turnero{
+                display: none;
+            }
+
+            #turnero:checked ~ .turnero{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: $backgroundModal;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                
+                .turnosClose{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 15px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
 }
 
 @media(min-width: 600px){
@@ -426,6 +488,53 @@ body{
             }
         }
     }
+
+    .body__contacto{
+        .contenido{
+            .contactos{
+                height: calc(100vh - $heightHeader - $heightFooter);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                #turnero{
+                    display: none;
+                }
+                .botonera{
+                    width: 40%;
+                    height: calc(100vh - $heightHeader - $heightFooter);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 20px;
+                }
+                .turnero{
+                    display: none;
+                }
+    
+                #turnero:checked ~ .turnero{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $backgroundModal;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+                    
+                    .turnosClose{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 15px;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media(min-width: 800px){
@@ -525,15 +634,16 @@ body{
 
     .body__servicios{
         .contenido{
+            //USO DE MIXIN
             .servicios{
-                .servicio{
+                @mixin servicio($left, $right, $direccion){
                     margin-left: 10vw;
                     margin-right: 10vw;
                     margin-bottom: 30px;
                     display: grid;
                     grid-template-rows: repeat(20px, 1fr);
-                    grid-template-columns: 300vw, 1fr;
-                    align-items: start;
+                    grid-template-columns: $left, $right;
+                    align-items: center;
     
                     .titulo{
                         align-self: center;
@@ -543,8 +653,16 @@ body{
                     }
                     .imagen{
                         width: 300px;
+                        height: 300px;
+                        object-fit: cover;
+                        object-position: center;
                         grid-row: 2/3;
-                        grid-column: 1/2;
+                        @if $direccion == "izq" {
+                            grid-column: 1/2;
+                        }
+                        @else {
+                            grid-column: 2/3;
+                        }
                         align-self: center;
                         justify-self: center;
                         border-radius: 30px;
@@ -553,11 +671,26 @@ body{
                         max-width: 500px;
                         width: 100%;
                         grid-row: 2/3;
-                        grid-column: 2/3;
-                        margin-left: 15px;
+                        @if $direccion == "izq" {
+                            grid-column: 2/3;
+                            margin-left: 15px;
+                        }
+                        @else {
+                            grid-column: 1/2;
+                            margin-right: 15px;
+                        }
                         justify-self: center;
+                        text-align: justify
                     }
-                }            
+                }
+                
+                .servicio--izquierda{
+                    @include servicio(300vw, 1fr, "izq");  
+                }
+    
+                .servicio--derecha{
+                    @include servicio(1fr, 300vw, "der");
+                }
             }
         }
         
@@ -591,7 +724,11 @@ body{
     .body__servicios{
         .contenido{
             .servicios{
-                .servicio{
+                .servicio--izquierda{
+                    margin-left: 20vw;
+                    margin-right: 20vw;
+                }
+                .servicio--derecha{
                     margin-left: 20vw;
                     margin-right: 20vw;
                 }
